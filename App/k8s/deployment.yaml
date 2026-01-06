@@ -1,0 +1,23 @@
+apiversion: apps/v1
+kind: Deployment
+metadata:
+  name: prod-app-Deployment
+  labels:
+    app: prod-app
+
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+       app: prod-app
+  template:
+    metadata:
+      labels:
+        app: prod-app
+    spec:
+      containers:
+      - name: prod-app
+        image: pranavhude/myapp:latest
+        imagePullPolicy: Always
+        ports:
+        - conatinerPort: 80

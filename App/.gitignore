@@ -1,0 +1,12 @@
+# OS files
+.DS_Store
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+
+# Terraform (if accidentally copied)
+.terraform/
+terraform.tfstate*
