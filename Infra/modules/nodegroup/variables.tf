@@ -21,3 +21,7 @@ variable "min_size" {
 variable "max_size" {
   type = number
 }
+variable "instance_type" {
+  description = "EC2 instance type for EKS node group"
+  type        = string
+}
