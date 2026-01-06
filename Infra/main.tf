@@ -14,7 +14,7 @@ module "security_groups" {
 module "iam" {
     source = "./modules/eks"
     cluster_name = var.eks_cluster_name
-    subnets_ids = module.vpc.private_subnets_ids
+    subnet_ids = module.vpc.private_subnet_ids
     cluster_role_arn = module.iam.eks_cluster_role_arn
 }
 
