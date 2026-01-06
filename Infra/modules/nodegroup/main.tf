@@ -1,11 +1,3 @@
-variable "cluster_name" {}
-variable "subnet_ids" {}
-variable "node_role_arn" {}
-variable "instance_type" {}
-variable "desired_size" {}
-variable "min_size" {}
-variable "max_size" {}
-
 resource "aws_launch_template" "eks_nodes" {
   name_prefix = "eks-node-lt-"
 
