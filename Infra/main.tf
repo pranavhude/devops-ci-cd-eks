@@ -19,13 +19,16 @@ module "iam" {
 }
 
 module "nodegroup" {
-    source = "./modules/nodegroup"
-    cluster_name = module.eks.cluster_name
-    subnets_ids  = module.vpc.private_subnets_ids
-    node_role_arn = module.iam.eks_node_role_arn
-    instance_type = var.node_instance_type
-    desired_size  = var.desired_capacity
-    min_size      = var.max_capacity
+  source = "./modules/nodegroup"
+
+  cluster_name    = module.eks.cluster_name
+  node_role_arn  = module.iam.node_role_arn
+
+  subnet_ids = module.vpc.private_subnet_ids
+
+  desired_size = 2
+  min_size     = 1
+  max_size     = 3
 }
 
 module "jenkins" {
