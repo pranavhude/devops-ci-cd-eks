@@ -1,6 +1,9 @@
 variable  "region" {}
 variable  "project_name" {}
-variable  "enviornment"{}
+variable  "environment"{
+  description = "Deployment environment (dev/prod)"
+  type        = string
+}
 
 variable "vpc_cidr" {}
 variable "public_subnets" {
